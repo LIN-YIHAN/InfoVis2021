@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>W02: task3</title>
+    </head>
+
+    <body>
+        <label>x0:<input type="number" id="x0" value="4"></label>
+        <label>y0:<input type="number" id="y0" value="2"></label>
+        <label>z0:<input type="number" id="z0" value="8"></label><br>
+        <label>x1:<input type="number" id="x1" value="3"></label>
+        <label>y1:<input type="number" id="y1" value="9"></label>
+        <label>z1:<input type="number" id="z1" value="1"></label><br>
+        <label>x2:<input type="number" id="x2" value="7"></label>
+        <label>y2:<input type="number" id="y2" value="6"></label>
+        <label>z2:<input type="number" id="z2" value="9"></label><br>
+        <br><input type="button"　
+              onclick="e()"　
+              value="Calculate!"
+              style="width:80px;height:80px"/>
+        <p id="answer"></p>
+        <script src="vec3.js"></script>
+        <script>
+            function distance(v0 ,v1){
+              return Math.sqrt((v0.x-v1.x)**2+(v0.y-v1.y)**2+(v0.z-v1.z)**2)
+            }
+            function AreaOfTriangle(v0 ,v1 ,v2){
+              var dis1,dis2,dis3;
+              dis1 = distance(v0,v1);
+              dis2 = distance(v1,v2);
+              dis3 = distance(v0,v2);
+              var s = (dis1+dis2+dis3)/2;
+			        return Math.sqrt(s*(s-dis1)*(s-dis2)*(s-dis3))
+
+            }
+
+            function e(){
+              var x0,y0,z0;
+              var x1,y1,z1;
+              var x2,y2,z2;
+              x0 = document.getElementById('x0').value;
+              y0 = document.getElementById('y0').value;
+              z0 = document.getElementById('z0').value;
+              x1 = document.getElementById('x1').value;
+              y1 = document.getElementById('y1').value;
+              z1 = document.getElementById('z1').value;
+              x2 = document.getElementById('x2').value;
+              y2 = document.getElementById('y2').value;
+              z2 = document.getElementById('z2').value;
+              var v0 =new Vec3(x0,y0,z0);
+              var v1 =new Vec3(x1,y1,z1);
+              var v2 =new Vec3(x2,y2,z2);
+              var S = AreaOfTriangle(v0,v1,v2);
+              document.getElementById("answer").innerHTML="The area of triangle is: " + S;
+            }
+
+
+
+        </script>
+    </body>
+</html>

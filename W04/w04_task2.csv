@@ -1,6 +1,6 @@
-x,y,h,color
-20,20,25,"red"
-20,50,25,"blue"
-20,80,25,"yellow"
-20,30,25,"green"
-20,70,25,"orange"
+x,h,w,color
+20,25,500,"red"
+20,25,50,"blue"
+20,25,300,"yellow"
+20,25,430,"green"
+20,25,99,"orange"

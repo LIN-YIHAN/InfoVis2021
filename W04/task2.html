@@ -1,21 +1,46 @@
 <html>
     <head>
-        <title>W04: task02</title>
+        <title>W04: task02 -- Nationality of foreign residents</title>
     </head>
     <body>
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script>
+   var padding =10 ;
+   var height = 20;
 	 var svg = d3.select("body").append("svg");
-	 d3.csv("https://LIN-YIHAN.github.io/InfoVis2021/W04/w04_task2.csv", draw );
+   svg.attr("width",1500)
+      .attr("height", padding  + 47 * ( height + padding));
+	 d3.csv("https://LIN-YIHAN.github.io/InfoVis2021/W04/test.csv", draw );
 	 function draw(data){
-	     svg.selectAll("rect")
+
+       svg.selectAll("text")
+         .data(data)
+          .enter()
+          .append("text")
+          .attr("x",padding)
+          .attr("y", function(d,i){ return 16+padding  + i * ( height + padding ); })
+          .text(function(d){return d.country})
+
+
+       svg.selectAll("rect")
 		.data(data)
 	        .enter()
 	        .append("rect")
-	        .attr("padding", function(d){ return d.x; })
-	        .attr("width", function(d,i){ return d.x + i*(d.h + d.x); })
-	        .attr("height", function(d){ return d.h; })
-          .style("fill",function (d) {return d.color})
+	        .attr("x", function(d){ return padding+100; })
+	        .attr("y", function(d,i){ return padding + i * (height + padding); })
+          .attr("width", function(d){ return d.num/10000; })
+	        .attr("height", function(d){ return height; })
+          //.style("fill",function (d) {return d.color})
+
+          svg.selectAll("text")
+            .data(data)
+             .enter()
+             .append("text")
+             .attr("x",padding+200)
+             .attr("y", function(d,i){ return 16+padding  + i * ( height + padding ); })
+             .text(function(d){ return d.num/10000; })
+
+
 
 	 };
 	</script>

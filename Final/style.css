@@ -1,0 +1,68 @@
+*{
+  box-sizing: border-box;
+  margin: 0 0 0 12px;
+  padding:0;
+}
+
+body {
+  font-family: system-ui;
+}
+
+#tooltip {
+  position: absolute;
+  opacity: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+}
+
+.tooltip-label {
+  font-weight: 500;
+  font-size: 11px;
+  color: #888;
+}
+
+h1{
+  font-size: 18px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  padding: 0;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+button{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  width: 120px;
+  height: 24px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+button:hover{
+  color: white;
+  background-color: black;
+}
+
+.source{
+  font-size: 12px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a{
+  color: #0d6ba5;
+  cursor: pointer;
+}
+
+a:hover{
+  opacity: .6;
+}

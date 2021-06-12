@@ -1,0 +1,42 @@
+<html>
+  <head>
+      <meta charset="utf-8">
+      <title>Final Task</title>
+      <style type="text/css">
+        .cards {
+            display: flex;
+
+            /* Put a card in the next row when previous cards take all width */
+            flex-wrap: wrap;
+            margin-left: auto;
+            margin-right: auto;
+        }
+         .cards__item {
+             /* There will be 4 cards per row */
+             flex-basis: 20%;
+
+             padding-left: 4px;
+             padding-right: 4px;
+         }
+      </style>
+  </head>
+  <body>
+    <div class="cards">
+        <div class="cards__item"id="pie_chart"></div>
+        <div class="cards__item" id="line_chart"></div>
+        <div class="cards__item" id="bar_chart"></div>
+    </div>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="pie_chart.js"></script>
+    <script src="line_chart.js"></script>
+    <!-- <script src="bar_chart.js"></script> -->
+    <!-- <button onclick="update('var1')">2019年</button>
+    <button onclick="update('var2')">2020年</button> -->
+
+
+
+  </body>
+
+
+</html>
